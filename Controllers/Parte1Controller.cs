@@ -18,9 +18,10 @@ namespace ProvaPub.Controllers
 			_randomService = randomService;
 		}
 		[HttpGet]
-		public int Index()
-		{
-			return _randomService.GetRandom();
-		}
-	}
+        public IActionResult Index()
+        {
+            int randomValue = _randomService.GetRandom();
+            return Ok(randomValue);
+        }
+    }
 }
